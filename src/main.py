@@ -10,10 +10,13 @@ def main():
 
     player1 = Player()
 
+    count = 0
+
     while player1.position < 100:
         options = ("NoPlay", "Ladder", "Snake")
 
         roll = Dice.roll()
+        count += 1
 
         match choice(options):
             case "NoPlay":
@@ -28,7 +31,7 @@ def main():
         if player1.position < 0:
             player1.position = 0
 
-        print(f"You rolled {roll} and moved to {player1.position}")
+        print(f"Count: {count} You rolled {roll} and moved to {player1.position}")
 
     print("You Won!")
 
